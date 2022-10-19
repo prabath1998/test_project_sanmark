@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RunnerController;
+use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app');
-});
+    return view('index');
+})->name('home');
 
+
+//store runner's data
 Route::post('/store', [RunnerController::class, 'store'])->name('store');
+
+//view settings page
+Route::get('/settings', [SettingsController::class, 'view'])->name('view');
+
+//store settings
+Route::post('/settings/save', [SettingsController::class, 'store'])->name('settings.save');
