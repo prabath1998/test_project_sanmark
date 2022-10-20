@@ -11,7 +11,12 @@
         table,
         th,
         td {
-            border: 1 solid;
+            border: 1px solid black;
+            border-collapse: collapse;
+            height: 40px;
+            width: 80px;
+            text-align: center;
+            vertical-align: middle;
         }
 
         table {
@@ -31,7 +36,10 @@
                         Name
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Radius
+                        Speed(kmph)
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Radius(m)
                     </th>
                     <th scope="col" class="py-3 px-6">
                         Start Time
@@ -40,7 +48,7 @@
                         End Time
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Duration
+                        Duration(h:m:s)
                     </th>
                     <th scope="col" class="py-3 px-6">
                         Number Of Laps
@@ -52,7 +60,7 @@
                     @php
                         $to = \Carbon\Carbon::createFromFormat('H:i:s', $data->begin);
                         $from = \Carbon\Carbon::createFromFormat('H:i:s', $data->end);
-                        //calculate difference between start valu and end value
+                        //calculate difference between start value and end value
                         $diff_in_seconds = $to->diffInSeconds($from);
                         
                         $hours = floor($diff_in_seconds / 3600);
@@ -60,6 +68,14 @@
                         $secs = floor($diff_in_seconds % 60);
                         //convert seconds to time format
                         $timeFormat = sprintf('%02d:%02d:%02d', $hours, $mins, $secs);
+                        
+                        //calculate circumference of ground
+                        $circumference = 2 * 3.14 * $data->radius;
+                        
+                        $diff_in_seconds = $to->diffInSeconds($from);
+                        // $diff_in_minutes = $diff_in_seconds / 60;
+                        
+                        $average_speed = ((($circumference / $diff_in_seconds) * 3600) / 1000) * $data->laps;
                     @endphp
 
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -67,7 +83,10 @@
                             {{ $data->name }}
                         </td>
                         <td class="py-4 px-6">
-                            {{ $data->radius }}
+                            {{ $average_speed }}
+                        </td>
+                        <td class="py-4 px-6">
+                            {{ $data->radius }}m
                         </td>
                         <td class="py-4 px-6">
                             {{ $data->begin }}

@@ -14,8 +14,8 @@ class ReportController extends Controller
         $data = Runner::all();
 
 
-        // $pdf = Pdf::loadView('pdf.report', compact('data'));
-        // return $pdf->download('report.pdf');
-        return view('pdf.report', compact('data'));
+        $pdf = Pdf::loadView('pdf.report', compact('data'));
+        return $pdf->download('report.pdf');
+        // return view('pdf.report', compact('data'));
     }
 }
