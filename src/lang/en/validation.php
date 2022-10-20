@@ -149,8 +149,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'radius' => [
+            'max' => 'The radius must not be greater than ground radius.'
         ],
     ],
 

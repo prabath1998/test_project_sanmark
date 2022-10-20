@@ -17,6 +17,7 @@ class RunnerController extends Controller
             'begin' => 'required',
             'end' => 'required',
             'laps' => 'required',
+
         ]);
 
         Runner::create($formFields);
