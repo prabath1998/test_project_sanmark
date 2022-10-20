@@ -6,7 +6,7 @@
         <form method="POST" action="{{ route('settings.save') }}" class="mb-4 mr-2">
             @csrf
             <div class="mb-4">
-                <label for="radius">Current Radius(m)</label>
+                <label for="radius">Ground Radius(m)</label>
 
                 <input type="number" step="any" value="{{ $settings ? $settings->radius : '' }}" name="radius"
                     placeholder="Radius(m)" class="border-2 border-slate-400 w-full p-4 rounded-md">

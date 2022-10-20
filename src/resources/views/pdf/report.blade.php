@@ -75,8 +75,9 @@
                         $diff_in_seconds = $to->diffInSeconds($from);
                         // $diff_in_minutes = $diff_in_seconds / 60;
                         
-                        $speed = ((($circumference / $diff_in_seconds) * 3600) / 1000) * $data->laps;
-                        $average_speed = round($speed);
+                        //calculate average speed
+                        $average_speed = ((($circumference / $diff_in_seconds) * 3600) / 1000) * $data->laps;
+                        $rounded_average_speed = round($average_speed);
                     @endphp
 
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -84,7 +85,7 @@
                             {{ $data->name }}
                         </td>
                         <td class="py-4 px-6">
-                            {{ $average_speed }}km/h
+                            {{ $rounded_average_speed }}km/h
                         </td>
                         <td class="py-4 px-6">
                             {{ $data->radius }}m
