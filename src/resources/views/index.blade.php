@@ -32,7 +32,7 @@
 
             <div class="mb-4">
                 <label for="begin" class="sr-only">Start Time</label>
-                <input type="time" value="{{ old('begin') }}" name="begin" placeholder="Start Time"
+                <input type="time" value="{{ old('begin') }}" step="1" name="begin" placeholder="Start Time"
                     class="border-2 border-slate-400 w-full p-4 rounded-md">
                 @error('begin')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -41,7 +41,7 @@
 
             <div class="mb-4">
                 <label for="end" class="sr-only">End Time</label>
-                <input type="time" value="{{ old('end') }}" name="end" placeholder="End Time"
+                <input type="time" value="{{ old('end') }}" step="1" name="end" placeholder="End Time"
                     class="border-2 border-slate-400 w-full p-4 rounded-md">
                 @error('end')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>

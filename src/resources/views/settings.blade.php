@@ -18,7 +18,7 @@
 
             <div>
                 <button type="submit"
-                    class="bg-violet-700 hover:bg-violet-800 text-white px-4 py-2 rounded font-medium justify-end">save</button>
+                    class="bg-gray-900 hover:bg-violet-800 text-white px-4 py-2 rounded font-medium justify-end">save</button>
             </div>
         </form>
 

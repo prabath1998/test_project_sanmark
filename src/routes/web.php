@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RunnerController;
 use App\Http\Controllers\SettingsController;
 use App\Models\Settings;
@@ -30,3 +31,6 @@ Route::get('/settings', [SettingsController::class, 'view'])->name('view');
 
 //store settings
 Route::post('/settings/save', [SettingsController::class, 'store'])->name('settings.save');
+
+//download report
+Route::get('/download', [ReportController::class, 'download'])->name('download');
