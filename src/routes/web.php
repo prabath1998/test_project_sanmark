@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RunnerController;
 use App\Http\Controllers\SettingsController;
+use App\Models\Settings;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $currentSettings = Settings::find(1);
+    return view('index', compact('currentSettings'));
 })->name('home');
 
 
