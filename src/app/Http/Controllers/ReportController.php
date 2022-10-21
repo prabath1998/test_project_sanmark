@@ -13,10 +13,10 @@ class ReportController extends Controller
     {
         $data = Runner::all();
 
+        //generete report if db has records
         if (!empty($data)) {
             $pdf = Pdf::loadView('pdf.report', compact('data'));
             return $pdf->download('report.pdf');
-            // return view('pdf.report', compact('data'));
         } else {
             return redirect()->back()->with('message', 'No records to generate..!');
         }

@@ -11,8 +11,8 @@
                     </svg>
                     <p>{{ session()->get('message') }}</p>
                 </div>
+            </div>
         @endif
-    </div>
     </div>
 
     <div class="container mx-auto">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="mb-6 text-center mt-6">
                             <button
-                                class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                                class="w-full h-16  px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
                                 type="submit">
                                 Save
                             </button>
