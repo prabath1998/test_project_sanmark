@@ -15,7 +15,7 @@ class RunnerController extends Controller
             'name' => 'required',
             'radius' => "required|numeric|max:$currentSettings->radius",
             'begin' => 'required',
-            'end' => 'required',
+            'end' => "required|after:$request->begin",
             'laps' => 'required',
 
         ]);

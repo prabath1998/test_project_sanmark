@@ -152,6 +152,9 @@ return [
         'radius' => [
             'max' => 'The radius must not be greater than ground radius.'
         ],
+        'end' => [
+            'after' => 'The end time must be a time after start time'
+        ],
     ],
 
     /*

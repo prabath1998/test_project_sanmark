@@ -13,7 +13,7 @@
         <form method="POST" action="{{ route('store') }}" class="mb-4 mr-2">
             @csrf
             <div class="mb-4">
-                <label for="name" class="sr-only">Runner's name</label>
+                <label for="name">Runner's name</label>
                 <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter runner's name"
                     class="border-2 border-slate-400 w-full p-4 rounded-md">
                 @error('name')
@@ -22,7 +22,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="radius" class="sr-only">Radius(m)</label>
+                <label for="radius">Radius(m)</label>
                 <input type="number" value="{{ old('radius') }}" step="any" name="radius" placeholder="Radius(m)"
                     class="border-2 border-slate-400 w-full p-4 rounded-md">
                 @error('radius')
@@ -31,7 +31,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="begin" class="sr-only">Start Time</label>
+                <label for="begin">Start Time</label>
                 <input type="time" value="{{ old('begin') }}" step="1" name="begin" placeholder="Start Time"
                     class="border-2 border-slate-400 w-full p-4 rounded-md">
                 @error('begin')
@@ -40,7 +40,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="end" class="sr-only">End Time</label>
+                <label for="end">End Time</label>
                 <input type="time" value="{{ old('end') }}" step="1" name="end" placeholder="End Time"
                     class="border-2 border-slate-400 w-full p-4 rounded-md">
                 @error('end')
@@ -49,7 +49,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="laps" class="sr-only">Number of Laps</label>
+                <label for="laps">Number of Laps</label>
                 <input type="number" value="{{ old('laps') }}" name="laps" placeholder="Number of Laps"
                     class="border-2 border-slate-400 w-full p-4 rounded-md">
                 @error('laps')
@@ -62,6 +62,5 @@
                     class="bg-gray-900 hover:bg-violet-800 text-white px-4 py-2 rounded font-medium justify-end">Submit</button>
             </div>
         </form>
-
     </div>
 @endsection
