@@ -3,71 +3,17 @@
 @section('content')
     <div x-data="{ showMessage: true }" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 2000)">
         @if (session()->has('message'))
-            <div class="p-3 text-green-700 bg-green-300 rounded text-center">
-                {{ session()->get('message') }}
-            </div>
+            <div class="px-8 py-6 bg-green-400 text-white flex justify-between rounded">
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-6" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                    </svg>
+                    <p>{{ session()->get('message') }}</p>
+                </div>
         @endif
-        {{-- <script>
-            @if (Session::has('message'))
-                toastr.success(" session('message') }");
-            @endif
-        </script> --}}
     </div>
-
-    {{-- <div class="flex justify-center mt-6">
-        <form method="POST" action="{{ route('store') }}" class="mb-4 mr-2">
-            @csrf
-            <div class="mb-4">
-                <label for="name">Runner's name</label>
-                <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter runner's name"
-                    class="border-2 border-slate-400 w-full p-4 rounded-md">
-                @error('name')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <div class="mb-4">
-                <label for="radius">Radius(m)</label>
-                <input type="number" value="{{ old('radius') }}" step="any" name="radius" placeholder="Radius(m)"
-                    class="border-2 border-slate-400 w-full p-4 rounded-md">
-                @error('radius')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <div class="mb-4">
-                <label for="begin">Start Time</label>
-                <input type="time" value="{{ old('begin') }}" step="1" name="begin" placeholder="Start Time"
-                    class="border-2 border-slate-400 w-full p-4 rounded-md">
-                @error('begin')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <div class="mb-4">
-                <label for="end">End Time</label>
-                <input type="time" value="{{ old('end') }}" step="1" name="end" placeholder="End Time"
-                    class="border-2 border-slate-400 w-full p-4 rounded-md">
-                @error('end')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <div class="mb-4">
-                <label for="laps">Number of Laps</label>
-                <input type="number" value="{{ old('laps') }}" name="laps" placeholder="Number of Laps"
-                    class="border-2 border-slate-400 w-full p-4 rounded-md">
-                @error('laps')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <div>
-                <button type="submit"
-                    class="bg-gray-900 hover:bg-violet-800 text-white px-4 py-2 rounded font-medium justify-end">Submit</button>
-            </div>
-        </form>
-    </div> --}}
+    </div>
 
     <div class="container mx-auto">
         <div class="flex justify-center px-6 my-12">
