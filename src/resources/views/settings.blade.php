@@ -21,7 +21,7 @@
 
                 <div>
                     <button
-                        class="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                        class="w-full px-4 py-2 font-bold text-white bg-violet-500 rounded-full hover:bg-violet-700 focus:outline-none focus:shadow-outline"
                         type="submit">
                         Set
                     </button>
