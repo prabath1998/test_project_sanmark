@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Runner;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -29,10 +30,19 @@ class RunningRecordTest extends TestCase
 
    public function test_user_can_change_setting()
    {
-      $response = $this->post('/settings/save',[
+      $response = $this->post('/settings/save', [
          'radius' => 130
       ]);
 
       $response->assertRedirect('/');
+   }
+
+   public function test_user_can_download_report()
+   {
+
+      $response = $this->get('/download');
+
+      $response->assertStatus(200);
+      $response->assertDownload('report.pdf');     
    }
 }
