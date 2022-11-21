@@ -26,4 +26,13 @@ class RunningRecordTest extends TestCase
       $response->assertStatus(302);
       $response->assertSessionHasNoErrors();
    }
+
+   public function test_user_can_change_setting()
+   {
+      $response = $this->post('/settings/save',[
+         'radius' => 130
+      ]);
+
+      $response->assertRedirect('/');
+   }
 }
