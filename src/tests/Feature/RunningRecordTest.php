@@ -10,11 +10,12 @@ use Tests\TestCase;
 
 class RunningRecordTest extends TestCase
 {
-   use WithoutMiddleware; 
+   use WithoutMiddleware;
+   // use RefreshDatabase;
    public function test_user_can_store_new_record()
-   {      
-      $response = $this->post('/store',[
-         'name' => 'Asanka',
+   {
+      $response = $this->post('/store', [
+         'name' => 'jayesh',
          'radius' => '50',
          'begin' => '09:00:00',
          'end' => '09:01:00',
@@ -22,8 +23,7 @@ class RunningRecordTest extends TestCase
       ]);
 
       $response->assertRedirect('/');
+      $response->assertStatus(302);
       $response->assertSessionHasNoErrors();
    }
-
-   
 }

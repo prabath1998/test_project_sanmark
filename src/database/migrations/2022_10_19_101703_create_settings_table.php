@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->float('radius');
+            $table->float('radius')->default(0);
             $table->timestamps();
         });
     }
