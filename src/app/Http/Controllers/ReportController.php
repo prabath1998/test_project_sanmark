@@ -15,7 +15,7 @@ class ReportController extends Controller
         $data = Runner::all();
 
         //generete report if db has records
-        if (!isEmpty($data)) {
+        if (!$data->isEmpty()) {
             $pdf = Pdf::loadView('pdf.report', compact('data'));
             return $pdf->download('report.pdf');
         } else {
